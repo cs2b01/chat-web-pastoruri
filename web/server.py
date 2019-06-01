@@ -85,6 +85,32 @@ def delete_message():
     return "Deleted Users"
 
 
+@app.route('/authenticate', methods=['POST'])
+def authenticate():
+    # #get data from requests
+    # username = request.form['username']
+    # password = request.form['password']
+    # #get users from database
+    # db_sessions = db.getSession(engine)
+    # users = db_sessions.query(entities.User)
+    # #search the user in collection (not efficient :(
+    # for user in users:
+    #     if user.username == username and user.password == password:
+    #         return render_template("success.html")
+    # return render_template("fail.html")
+
+    username = request.form['username']
+    password = request.form['password']
+
+    db_session = db.getSession(engine)
+    try:
+        user = db_session.query(entities.User
+            ).filter(entities.User.username == username
+            ).filter(entities.User.password == password
+            ).one()
+        return render_template("success.html")
+    except Exception:
+        return render_template("fail.html")
 
 if __name__ == '__main__':
     app.secret_key = ".."
