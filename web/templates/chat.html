@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color:#d6ff99;">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <script src="/static/js/libs/bootstrap.min.js" ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="chat.js"></script>
+    <link rel="stylesheet" href="/static/css/login.css">
+    <div><a href="/static/index.html"><img src="/static/images/home.png"></a></div>
+</head>
+
+<body onload="whoami()" style="background-color:#d6ff99;">
+
+<table width="100%" border="1px solid" style="background-color:#d6ff99;">
+    <tr>
+        <td width="10%">
+
+            <div  class="alert alert-primary" role="alert">
+            <label id="cu_username"></label>
+            <br/>
+            <label id="cu_name"></label>
+            </div>
+
+
+            <div id="allusers"></div>
+
+        </td>
+
+        <td  width="30%" >
+
+            <div class="form" id="foo" style="text-align:center;background-color:white">
+            <div id="messagesshow"><p style="color:black;font-size:30px;"></p></div>
+            </div>
+
+            <div align="center">
+
+                <div  id="messages" align="center"></div>
+                <input type="text" id="postmessage" size="100"/>
+                <input id="sendme" type="image" onclick="sendMessage()" src="/static/images/send.png"/>
+
+            </div>
+
+        </td>
+
+    </tr>
+</table>
+
+
+</body>
+</html>
